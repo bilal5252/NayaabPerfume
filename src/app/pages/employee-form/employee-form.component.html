@@ -1,0 +1,49 @@
+<h5 class="mb-5 text-lg font-bold tracking-tight text-gray-900 dark:text-white ">Product Details</h5>
+<form [formGroup]="employeeForm" class="w-full" (ngSubmit)="onSubmit()" novalidate>
+  <div class="mb-2">
+    <label for="name" class="block text-sm font-medium text-gray-900 dark:text-white">Product name</label>
+    <input type="text" id="name" class="form-control" placeholder="Product name" formControlName="name">
+    @if (employeeForm.get('name')?.hasError('required') && employeeForm.get('name')?.touched) {
+    <div class="form-error">Product name is required</div>
+    }
+  </div>
+  <div class="mb-2">
+    <label for="category" class="block text-sm font-medium text-gray-900 dark:text-white">Product category</label>
+    <input type="text" id="category" class="form-control" placeholder="Product category" formControlName="category">
+    @if (employeeForm.get('category')?.hasError('required') && employeeForm.get('category')?.touched) {
+    <div class="form-error">Product category is required</div>
+    }
+  </div>
+  <div class="mb-2">
+    <label for="quantity" class="block text-sm font-medium text-gray-900 dark:text-white">Quantity</label>
+    <input type="number" id="quantity" class="form-control" placeholder="Quantity" formControlName="quantity">
+    @if (employeeForm.get('quantity')?.hasError('required') && employeeForm.get('quantity')?.touched) {
+    <div class="form-error">Quantity is required</div>
+    }
+  </div>
+  <div class="mb-2">
+    <label for="remaining" class="block text-sm font-medium text-gray-900 dark:text-white">Remaining</label>
+    <input type="number" id="remaining" class="form-control" placeholder="Remaining" formControlName="remaining">
+    @if (employeeForm.get('remaining')?.hasError('required') && employeeForm.get('remaining')?.touched) {
+    <div class="form-error">Remaining is required</div>
+    }
+  </div>
+  <div class="mb-2">
+    <label for="price" class="block text-sm font-medium text-gray-900 dark:text-white">Price</label>
+    <input type="number" id="price" class="form-control" placeholder="Price" formControlName="price">
+    @if (employeeForm.get('price')?.hasError('required') && employeeForm.get('price')?.touched) {
+    <div class="form-error">Price is required</div>
+    }
+  </div>
+  <div class="mb-5">
+    <label for="sellingPrice" class="block text-sm font-medium text-gray-900 dark:text-white">Selling Price</label>
+    <input type="number" id="sellingPrice" class="form-control" placeholder="Selling Price" formControlName="sellingPrice">
+    @if (employeeForm.get('sellingPrice')?.hasError('required') && employeeForm.get('sellingPrice')?.touched) {
+    <div class="form-error">Selling Price is required</div>
+    }
+  </div>
+  <button type="submit"
+    class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+  <button type="button" (click)="onClose()"
+    class="text-white  ms-2 bg-gray-700 hover:bg-gray-800 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center">Cancel</button>
+</form>
